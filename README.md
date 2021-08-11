@@ -33,10 +33,35 @@ git push origin master
 
 Time to move on to the next stage!
 
-# Running Locally
+# Running Your Program Locally
 
 1. Ensure you have `python (3.8)` installed locally
 1. Run `./your_sqlite3.sh` to run your program, which is implemented in
    `app/main.py`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
+
+# Sample Databases
+
+To make testing queries locally, we've added three sample databases in the root
+of this repository:
+
+1. `sample.db`
+   - This contains two tables: `apples` & `oranges`.
+   - Use this to test the first 5 stages.
+1. `superheroes.db`:
+   - This is a small version of the test database for stage 6
+   - It contains one table: `superheroes`.
+1. `companies.db`:
+   - This is a small version of the test database for stage 7
+   - It contains one table: `companies`, and one index: `idx_companies_country`
+
+You can explore these databases by running queries against them like this:
+
+```sh
+$ sqlite3 sample.db "select id, name from apples"
+1|Granny Smith
+2|Fuji
+3|Honeycrisp
+4|Golden Delicious
+```
